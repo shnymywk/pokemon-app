@@ -10,11 +10,12 @@ const Card = ({ pokemon }) => {
             <h3 className="cardName">{pokemon.name}</h3>
             <div className="cardTypes">
                 <div>タイプ</div>
+                {/* pokemon.typesの配列をtypeとして1つずつ展開 */}
                 {pokemon.types.map((type) => {
                     return (
+                    //map関数のkeyをtypeのnameとして設定。
                     <div key={type.type.name}>
                         <span>{type.type.name}</span>
-                        
                     </div>
                     );
                 })}
@@ -27,6 +28,7 @@ const Card = ({ pokemon }) => {
                     <p className="title">高さ：{pokemon.height}</p>
                 </div>
                 <div className="cardData">
+                    {/* abilitiesの一番最初の配列からability.nameを取得 */}
                     <p className="title">アビリティ：{pokemon.abilities[0].ability.name}</p>
                 </div>
             </div>
